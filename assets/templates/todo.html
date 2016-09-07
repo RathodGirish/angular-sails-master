@@ -1,0 +1,26 @@
+<div class="container" ng-controller="TodoCtrl">
+    <div class="">
+        <h1 align="center">Todo Application</h1>
+        <br>
+       <div id="emp-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                 <form name="todofrm">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Add Todo!" ng-model="formData.value" required>
+                    </div>
+                    <button type="submit" ng-disabled="!todofrm.$valid" class="btn btn-primary btn-lg" ng-click="addTodo()">Add Todo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="todo-list" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="checkbox" ng-repeat="todo in todos">
+                <label>
+                    <input type="checkbox" ng-click="removeTodo(todo)">
+                    {{ todo.value }}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
